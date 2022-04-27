@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+.nav-link {
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #f0ad4e;
+}
+
+.tel-number {
+  font-weight: bolder;
+}
+
+.tel-number:hover {
+  text-decoration: none;
+}
+
+.slogan-jumbotron {
+  font-family: "Patrick Hand", cursive;
+}
+
+/*
+footer{
+  height: 100vh;
+}
+*/
