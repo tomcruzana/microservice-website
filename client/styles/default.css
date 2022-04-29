@@ -20,8 +20,18 @@
   font-family: "Patrick Hand", cursive;
 }
 
-/*
-footer{
-  height: 100vh;
+.fa-facebook-square{
+  color: #3b5998 !important;
 }
-*/
+
+.fa-youtube-square{
+  color: #FF0000 !important;
+}
+
+.fa-twitter-square{
+  color: #00acee !important;
+}
+
+.fa-instagram-square{
+  color: #8a3ab9 !important;
+}
