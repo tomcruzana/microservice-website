@@ -35,3 +35,20 @@
 .fa-instagram-square{
   color: #8a3ab9 !important;
 }
+
+.products-sidebar{
+  background-color: #f7f7f7;
+}
+
+.product-horizontal{
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.product-card{
+  cursor: pointer;
+}
+
+.product-rating{
+  color: #f0ad4e;
+}

@@ -107,7 +107,137 @@
 
     <!-- main container start-->
     <div class="container">
-      <span class="loader"></span>
+      <div class="row">
+        <!-- sidebar start-->
+        <div class="col-4 products-sidebar">
+          <!--category start-->
+          <div class="product-price-range mt-4">
+            <p class="text-capitalize font-weight-bold m-0">Category</p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+            <p class="text-capitalize pl-3 m-0"><a href="#">lorem Ipsum</a></p>
+          </div>
+
+          <!--price range-->
+          <div class="product-price-range border-top border-bottom mt-4">
+            <p class="text-capitalize font-weight-bold m-0">Price Range</p>
+            <p class="pl-3 m-0"><a href="#">Under $100</a></p>
+            <p class="pl-3 m-0"><a href="#">$500 to $600</a></p>
+            <p class="pl-3 m-0"><a href="#">$600 to $700</a></p>
+            <p class="pl-3 m-0"><a href="#">$700 to $800</a></p>
+            <p class="pl-3 m-0"><a href="#">$800 to $1000</a></p>
+            <p class="pl-3 m-0"><a href="#">$1000 & Above</a></p>
+          </div>
+
+          <!--refine search button-->
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-block btn-sm my-4"
+          >
+            Refine Search
+          </button>
+        </div>
+
+        <!-- COL PRODUCT RESULT SET -->
+
+        <div class="col-8 product-result-set">
+          <!-- product filter-->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb rounded-0">
+              <form class="form-row" action="" method="get">
+                <div class="col-auto my-1">
+                  <select class="custom-select text-capitalize">
+                    <option selected>price: low to high</option>
+                    <option value="1">price: high to low</option>
+                    <option value="2">rating: low to high</option>
+                    <option value="3">rating: high to low</option>
+                    <option value="3">name: A to Z</option>
+                    <option value="3">name: Z to A</option>
+                  </select>
+                </div>
+                <div class="col-auto my-1">
+                  <input
+                    class="form-control mr-sm-2"
+                    type="search"
+                    placeholder="Search keywords"
+                    aria-label="Search"
+                  />
+                </div>
+                <div class="col-auto my-1">
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+              </form>
+            </ol>
+          </nav>
+
+          <!-- result text-->
+          <p class="text-uppercase font-weight-bold">Results</p>
+
+          <div class="col-12 mt-3">
+            <!-- product card start-->
+            <div class="card my-2 product-card">
+              <div class="product-horizontal">
+                <div class="img-square-wrapper">
+                  <img
+                    class="product-image m-2"
+                    src="https://dummyimage.com/200x200/6495ED/fff.png"
+                    alt="Card image cap"
+                  />
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Product Title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </div>
+                  <h5 class="mt-2 product-price">
+                    <span class="proct-currency">$</span>1000.00
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <!-- product card end-->
+          </div>
+        </div>
+        
+      </div>
+      <!-- pagination start-->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item disabled"><a class="page-link">...</a></li>
+          <li class="page-item"><a class="page-link" href="#">20</a></li>
+          
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
     </div>
 
     <!--footer start -->
