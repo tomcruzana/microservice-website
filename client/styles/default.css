@@ -45,10 +45,23 @@
   flex: 1 1 auto;
 }
 
-.product-card{
-  cursor: pointer;
-}
-
 .product-rating{
   color: #f0ad4e;
+}
+
+.product-link:link, .product-link:visited, .product-link:hover, .product-link:active{
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+.product-link:hover{
+  background-color: #f7f7f7;
+}
+
+.btn-product-add-to-cart{
+  background-color: #ffd814 !important;
+}
+
+.btn-buy-now{
+  background-color: #ffa41c !important;
 }
