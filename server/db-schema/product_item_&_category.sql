@@ -59,3 +59,12 @@ values
 (UPPER("ELECTRONICS"), "laptop", "lorem ipsum dolor amet", "test", 799.99, 12, 4.5);
 
 select * from product_item;
+
+
+### PRODUCT_CART_JUNCTION
+create table product_cart_junction(
+	product_id int not null,
+    customer_cart_id int not null,
+    foreign key (product_id) references product_item(id)
+    ### cant fk customer_cart_id since it will be stored in a different db 
+);
