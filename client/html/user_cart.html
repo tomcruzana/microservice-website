@@ -112,6 +112,9 @@
           <i class="fa-solid fa-address-card"></i> Your shopping cart has
           <span class="customer-cart-total-items">0</span> items
         </h1>
+        <h3 class="customer-cart-greeting">
+          Hello, <span class="customer-name">guest</span>.
+        </h3>
         <table class="table">
           <thead>
             <tr>
@@ -154,10 +157,17 @@
                 />
               </td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm" disabled>
-                  U
+                <button
+                  id="u1"
+                  type="button"
+                  class="btn btn-primary btn-sm"
+                  disabled
+                >
+                  <i class="fa-solid fa-square-pen"></i>
                 </button>
-                <button type="button" class="btn btn-danger btn-sm">D</button>
+                <button id="d1" type="button" class="btn btn-danger btn-sm">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
               </td>
             </tr>
             <!-- cart product item template end-->
@@ -194,10 +204,12 @@
                 />
               </td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm" disabled>
-                  U
+                <button id="u2" type="button" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-square-pen"></i>
                 </button>
-                <button type="button" class="btn btn-danger btn-sm">D</button>
+                <button id="d2" type="button" class="btn btn-danger btn-sm">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
               </td>
             </tr>
             <!-- cart product item template end-->
@@ -243,7 +255,7 @@
           <i class="fa-solid fa-envelope"></i>
           Author:
           <a class="align-middle my-0" href="mailto: abc@example.com"
-            >Thomas Cruzana</a
+            >Thomas </a
           >
         </p>
       </div>
