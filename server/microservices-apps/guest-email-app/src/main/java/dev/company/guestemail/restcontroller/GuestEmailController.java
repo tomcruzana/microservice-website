@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import dev.company.guestemail.exception.GuestEmailException;
 import dev.company.guestemail.service.GuestEmailService;
 
 @RestController
@@ -20,7 +21,7 @@ public class GuestEmailController {
 	GuestEmailService guestEmailService;
 
 	@GetMapping("/total")
-	public ResponseEntity<Map<String, String>> getHome() {
+	public ResponseEntity<Map<String, String>> getHome() throws Exception {
 		String total = guestEmailService.getAllGuestEmails();
 		Map<String, String> guestEmailCount = new HashMap<>();
 		guestEmailCount.put("Total", total);
