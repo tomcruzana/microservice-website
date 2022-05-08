@@ -18,7 +18,7 @@ import dev.company.coupon.service.CouponService;
 
 @RestController
 @RequestMapping("/")
-public class CouponController implements ErrorController{
+public class CouponController implements ErrorController {
 
 	@Autowired
 	CouponService couponService;
@@ -29,7 +29,7 @@ public class CouponController implements ErrorController{
 		CouponDto couponDto = couponService.getCoupon(code);
 		return new ResponseEntity<>(couponDto, HttpStatus.OK);
 	}
-	
+
 	// TODO: refactor error and return json
 	// https://www.toptal.com/java/spring-boot-rest-api-error-handling
 	@RequestMapping("/error")

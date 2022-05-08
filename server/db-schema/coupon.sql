@@ -4,7 +4,8 @@ create table coupon(
 	id int primary key auto_increment, 
 	date_created date default (current_date),
 	code varchar(255) not null unique,
-    discount decimal(13,2) not null
+    discount decimal(13,2) not null,
+    is_active boolean default true
 );
 
 insert into coupon
