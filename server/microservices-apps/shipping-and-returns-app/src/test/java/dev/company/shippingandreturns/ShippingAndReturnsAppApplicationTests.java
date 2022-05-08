@@ -76,7 +76,7 @@ class ShippingAndReturnsAppApplicationTests {
 		Optional<ShippingAndReturns> shippingAndReturnsOptional = shippingAndReturnsRepo.findById(2);
 		ShippingAndReturns shippingAndReturns = shippingAndReturnsOptional.get();
 		System.out.println(shippingAndReturns.getTitle());
-		// TODO: move address to app.properties
+		
 		// save the read image to this path dir and override if file exists
 		String fileName = "shippingAndReturns".toUpperCase();
 		String fileType = ".png".toUpperCase();
