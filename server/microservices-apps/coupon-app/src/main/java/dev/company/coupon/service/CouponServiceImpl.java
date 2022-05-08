@@ -29,10 +29,13 @@ public class CouponServiceImpl implements CouponService {
 				.orElseThrow(() -> new CouponException(environment.getProperty("Domain.RESOURCE_NOT_FOUND")));
 
 		CouponDto couponDto = new CouponDto();
+
 		couponDto.setId(coupon.getId());
 		couponDto.setDateCreated(coupon.getDateCreated());
 		couponDto.setDiscount(coupon.getDiscount());
 		couponDto.setCode(coupon.getCode().toUpperCase()); // convert the coupon code to upper case
+		couponDto.setActive(coupon.isActive());
+
 		return couponDto;
 	}
 

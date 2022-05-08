@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "coupon")
-public class Coupon{
+public class Coupon {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +27,9 @@ public class Coupon{
 	private String code;
 
 	private BigDecimal discount;
+
+	@Column(name = "is_active", nullable = false, columnDefinition = "TINYINT", length = 1)
+	private boolean isActive;
 
 	public Coupon() {
 	}
@@ -61,6 +64,14 @@ public class Coupon{
 
 	public void setDiscount(BigDecimal discount) {
 		this.discount = discount;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 
 }

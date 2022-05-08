@@ -13,6 +13,8 @@ public class CouponDto {
 
 	private BigDecimal discount;
 
+	private boolean isActive;
+
 	public int getId() {
 		return id;
 	}
@@ -44,4 +46,13 @@ public class CouponDto {
 	public void setDiscount(BigDecimal discount) {
 		this.discount = discount;
 	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
 }
