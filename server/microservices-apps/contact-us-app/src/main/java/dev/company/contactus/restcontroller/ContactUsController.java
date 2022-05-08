@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,7 +40,7 @@ public class ContactUsController {
 	}
 
 	@PostMapping("/contact_us")
-	public ResponseEntity<String> ContactUsMessage(ContactUsDto contactUsDto) throws Exception {
+	public ResponseEntity<String> ContactUsMessage(@RequestBody ContactUsDto contactUsDto) throws Exception {
 		contactUsService.storeContactUsMessage(contactUsDto);
 		String successMessage = environment.getProperty("API.INSERT_SUCCESS");
 		return new ResponseEntity<>(successMessage, HttpStatus.CREATED);
