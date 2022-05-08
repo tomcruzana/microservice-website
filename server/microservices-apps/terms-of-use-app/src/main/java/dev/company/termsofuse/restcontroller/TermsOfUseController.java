@@ -20,7 +20,7 @@ public class TermsOfUseController {
 	@GetMapping("/terms_of_use")
 	public ResponseEntity<TermsOfUseDto> getTermsOfUse() throws Exception {
 		final int termsOfUseId = 1;
-		TermsOfUseDto termsOfUseDto = termsOfUseService.getTermsOfUseById(termsOfUseId);
+		TermsOfUseDto termsOfUseDto = termsOfUseService.getTermsOfUse(termsOfUseId);
 		return new ResponseEntity<>(termsOfUseDto, HttpStatus.OK);
 	}
 }

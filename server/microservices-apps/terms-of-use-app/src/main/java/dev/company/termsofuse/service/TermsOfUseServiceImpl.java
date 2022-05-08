@@ -21,7 +21,7 @@ public class TermsOfUseServiceImpl implements TermsOfUseService {
 	private Environment environment;
 
 	@Override
-	public TermsOfUseDto getTermsOfUseById(int id) throws TermsOfUseException {
+	public TermsOfUseDto getTermsOfUse(int id) throws TermsOfUseException {
 		Optional<TermsOfUse> termsOfUseOptional = termsOfUseRepo.findById(id);
 		TermsOfUse termsOfUse = termsOfUseOptional
 				.orElseThrow(() -> new TermsOfUseException(environment.getProperty("Domain.RESOURCE_NOT_FOUND")));
