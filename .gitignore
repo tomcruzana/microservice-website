@@ -23,4 +23,4 @@
 hs_err_pid*
 
 # template project dir
-\server\microservices-apps\template
+/server/microservices-apps/template
