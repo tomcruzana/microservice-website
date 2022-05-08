@@ -2,8 +2,8 @@ drop table terms_of_use;
 
 create table terms_of_use(
 	id int primary key auto_increment, 
-	date_created date default (current_date),
-    title varchar(255) default "terms of use",
+	date_created date not null default (current_date),
+    title varchar(255) not null default "terms of use",
     description text not null
 );
 
