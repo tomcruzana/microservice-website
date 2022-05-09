@@ -68,3 +68,5 @@ create table product_cart_junction(
     foreign key (product_id) references product_item(id)
     ### cant fk customer_cart_id since it will be stored in a different db 
 );
+
+drop table product_cart_junction;
