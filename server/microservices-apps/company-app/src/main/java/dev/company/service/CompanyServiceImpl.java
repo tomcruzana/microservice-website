@@ -1,5 +1,6 @@
 package dev.company.service;
 
+import java.text.SimpleDateFormat;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ public class CompanyServiceImpl implements CompanyService {
 		addressDto.setCity(company.getAddress().getCity());
 
 		companyDto.setId(company.getId());
+		companyDto.setName(company.getName());
 		companyDto.setOwnerFirstName(company.getOwnerFirstName());
 		companyDto.setOwnerLastName(company.getOwnerLastName());
 		companyDto.setEmailAddress(company.getEmailAddress());

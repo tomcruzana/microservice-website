@@ -3,6 +3,7 @@ drop table company;
 
 create table company(
 	id int primary key auto_increment,
+    name tinytext not null,
     owner_first_name varchar(255) not null,
     owner_last_name varchar(255) not null,
     email_address varchar(255) not null unique, 
@@ -20,6 +21,7 @@ create table company(
 
 insert into company
 (
+name,
 owner_first_name,
 owner_last_name,
 email_address,
@@ -30,6 +32,7 @@ street, zip, state, country, city
 )
 values
 (
+"company",
 "thomas",
 "developer",
 "3609991234",

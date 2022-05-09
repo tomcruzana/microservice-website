@@ -18,6 +18,8 @@ public class Company {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	private String name;
+
 	@Column(name = "owner_first_name")
 	private String ownerFirstName;
 
@@ -53,6 +55,14 @@ public class Company {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getOwnerFirstName() {
