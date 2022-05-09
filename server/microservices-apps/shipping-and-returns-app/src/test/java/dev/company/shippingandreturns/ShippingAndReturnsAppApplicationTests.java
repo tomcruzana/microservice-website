@@ -56,7 +56,7 @@ class ShippingAndReturnsAppApplicationTests {
 
 		String fileName = "c".toUpperCase();
 		String fileType = ".png".toUpperCase();
-		File file = new File("/Users/tomcr/OneDrive/Pictures/" + fileName.concat(fileType));
+		File file = new File(environment.getProperty("shipping_and_returns.img.upload.path") + fileName.concat(fileType));
 		byte fileContent[] = new byte[(int) file.length()];
 		FileInputStream inputStream = new FileInputStream(file);
 		inputStream.read(fileContent);
@@ -80,7 +80,7 @@ class ShippingAndReturnsAppApplicationTests {
 		// save the read image to this path dir and override if file exists
 		String fileName = "shippingAndReturns".toUpperCase();
 		String fileType = ".png".toUpperCase();
-		File file = new File("/Users/tomcr/OneDrive/Pictures/Downloaded/" + fileName.concat(fileType));
+		File file = new File(environment.getProperty("shipping_and_returns.img.download.path") + fileName.concat(fileType));
 		FileOutputStream fos = new FileOutputStream(file);
 
 		// read the image blob from the db
