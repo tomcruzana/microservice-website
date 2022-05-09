@@ -11,7 +11,7 @@ create table company(
 	slogan tinytext not null,
 	business_hour_start time not null default "08:00:00",
     business_hour_end time not null default "05:00:00",
-    business_days char(20),
+    business_days char(20) default "M - F",
 	street varchar(255) not null,
 	zip char(10) not null,
     state char(2) not null,

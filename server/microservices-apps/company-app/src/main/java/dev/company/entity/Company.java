@@ -1,5 +1,7 @@
 package dev.company.entity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,7 +10,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "company")
@@ -34,9 +39,11 @@ public class Company {
 
 	private String slogan;
 
+	@Temporal(TemporalType.TIME)
 	@Column(name = "business_hour_start")
 	private Date businessHourStart;
 
+	@Temporal(TemporalType.TIME)
 	@Column(name = "business_hour_end")
 	private Date businessHourEnd;
 
@@ -47,6 +54,30 @@ public class Company {
 	private Address address;
 
 	public Company() {
+
+	}
+
+	@PrePersist
+	private void prePersistDefaults() throws ParseException {
+		/*
+		 * helpful doc for formatting time :
+		 * https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
+		 * 
+		 */
+
+		// pre-populate business hour information with default values
+		final String BUSINESS_HOUR_START_STRING = "08:00:00";
+		final String BUSINESS_HOUR_END_STRING = "05:00:00";
+		SimpleDateFormat formatter = new SimpleDateFormat("h:mm:ss");
+
+		Date businessHourTemp = formatter.parse(BUSINESS_HOUR_START_STRING);
+		this.businessHourStart = businessHourTemp;
+
+		businessHourTemp = formatter.parse(BUSINESS_HOUR_END_STRING);
+		this.businessHourEnd = businessHourTemp;
+
+		// pre-populate business day information
+		this.businessDays = "M - F";
 	}
 
 	public int getId() {
