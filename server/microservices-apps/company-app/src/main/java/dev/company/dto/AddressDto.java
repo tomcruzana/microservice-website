@@ -1,10 +1,6 @@
-package dev.company.entity;
+package dev.company.dto;
 
-import javax.persistence.Embeddable;
-
-@Embeddable
-public class Address {
-
+public class AddressDto {
 	private String street;
 
 	private String zip;
@@ -19,7 +15,7 @@ public class Address {
 		return street;
 	}
 
-	public Address() {
+	public AddressDto() {
 	}
 
 	public void setStreet(String street) {
@@ -57,5 +53,4 @@ public class Address {
 	public void setCity(String city) {
 		this.city = city;
 	}
-
 }

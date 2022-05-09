@@ -1,50 +1,29 @@
-package dev.company.entity;
+package dev.company.dto;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "company")
-public class Company {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CompanyDto {
 	private int id;
 
-	@Column(name = "owner_first_name")
 	private String ownerFirstName;
 
-	@Column(name = "owner_last_name")
 	private String ownerLastName;
 
-	@Column(name = "email_address")
 	private String emailAddress;
 
-	@Column(name = "phone_number")
 	private String phoneNumber;
 
 	private String slogan;
 
-	@Column(name = "business_hour_start")
 	private Date businessHourStart;
 
-	@Column(name = "business_hour_end")
 	private Date businessHourEnd;
 
-	@Column(name = "business_days")
 	private String businessDays;
 
-	@Embedded
-	private Address address;
+	private AddressDto addressDto;
 
-	public Company() {
+	public CompanyDto() {
 	}
 
 	public int getId() {
@@ -119,12 +98,12 @@ public class Company {
 		this.businessDays = businessDays;
 	}
 
-	public Address getAddress() {
-		return address;
+	public AddressDto getAddressDto() {
+		return addressDto;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setAddressDto(AddressDto addressDto) {
+		this.addressDto = addressDto;
 	}
 
 }
