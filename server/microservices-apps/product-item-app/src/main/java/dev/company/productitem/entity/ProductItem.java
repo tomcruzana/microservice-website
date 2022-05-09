@@ -48,7 +48,7 @@ public class ProductItem {
 
 	@PrePersist
 	public void prePersistDefaults() {
-		this.rating = 0;
+	
 	}
 
 	public int getId() {
