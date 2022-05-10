@@ -3,7 +3,6 @@ drop table registered_customer;
 
 create table registered_customer(
 	id int primary key auto_increment,
-    cart_id char(8) unique,
     first_name varchar(255) not null,
     last_name varchar(255) not null,
     phone_number char(32) unique,
@@ -48,10 +47,6 @@ create table cart(
 
 select * from cart;
 
-### add fk constraint
-alter table registered_customer
-add foreign key (cart_id) references cart(id);
-
 
 ### CUSTOMER (NOTE: THIS REPRESENTS AN ABSTRACT CLASS) ###
 drop table customer;
@@ -70,8 +65,7 @@ CREATE PROCEDURE CreateCartForRegisteredCustomer(
     IN registeredCustomerId int
 )
 BEGIN
-	insert into cart(id, registered_customer_id) values(cartId, registeredCustomerId);
-	update registered_customer set cart_id = cartId where id = cartId;
+	insert into cart(id, registered_customer_id) values(CONCAT("CART", cartId), registeredCustomerId);
 END //
 DELIMITER ;
 
@@ -90,9 +84,9 @@ create table cart_item(
 );
 
 insert into cart_item (cart_id, product_item_id, quantity)
-values('1', 1, 8);
+values('CART1', 1, 8);
 insert into cart_item (cart_id, product_item_id, quantity)
-values('1', 2, 2);
+values('CART1', 2, 2);
 
 select * from cart_item;
 
