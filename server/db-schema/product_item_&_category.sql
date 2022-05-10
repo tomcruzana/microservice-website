@@ -56,7 +56,7 @@ create table product_item(
 insert into product_item
 (product_category_name, title, description, photo, price, stock_quantity, rating)
 values
-(UPPER("ELECTRONICS"), "laptop", "lorem ipsum dolor amet", "test", 799.99, 12, 4.5);
+(UPPER("ELECTRONICS"), "smart tv", "lorem ipsum dolor amet", "test", 4399.99, 2, 3.5);
 
 select * from product_item;
 
