@@ -49,8 +49,8 @@ public class Employee {
 	private boolean isEnabled;
 
 	@ManyToOne
-	@JoinColumn(name = "employee_role_name")
-	private EmployeeRole employeeRole;
+	@JoinColumn(name = "user_role_name")
+	private UserRole userRole;
 
 	public Employee() {
 	}
@@ -132,12 +132,12 @@ public class Employee {
 		this.isEnabled = isEnabled;
 	}
 
-	public EmployeeRole getEmployeeRole() {
-		return employeeRole;
+	public UserRole getUserRole() {
+		return userRole;
 	}
 
-	public void setEmployeeRole(EmployeeRole employeeRole) {
-		this.employeeRole = employeeRole;
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
 	}
 
 }

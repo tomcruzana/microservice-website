@@ -9,16 +9,16 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "employee_role")
-public class EmployeeRole {
+@Table(name = "user_role")
+public class UserRole {
 
 	@Id
 	private String name;
 
-	@OneToMany(mappedBy = "employeeRole", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "userRole", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Employee> employees;
 
-	public EmployeeRole() {
+	public UserRole() {
 
 	}
 

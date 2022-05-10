@@ -2,13 +2,13 @@ package dev.company.employee.dto;
 
 import java.util.List;
 
-public class EmployeeRoleDto {
+public class UserRoleDto {
 
 	private String name;
 
 	private List<EmployeeDto> employees;
 
-	public EmployeeRoleDto() {
+	public UserRoleDto() {
 
 	}
 

@@ -22,7 +22,7 @@ public class EmployeeDto {
 
 	private boolean isEnabled;
 
-	private EmployeeRoleDto employeeRole;
+	private UserRoleDto userRoleDto;
 
 	public EmployeeDto() {
 	}
@@ -99,12 +99,12 @@ public class EmployeeDto {
 		this.isEnabled = isEnabled;
 	}
 
-	public EmployeeRoleDto getEmployeeRole() {
-		return employeeRole;
+	public UserRoleDto getUserRoleDto() {
+		return userRoleDto;
 	}
 
-	public void setEmployeeRole(EmployeeRoleDto employeeRole) {
-		this.employeeRole = employeeRole;
+	public void setUserRoleDto(UserRoleDto userRoleDto) {
+		this.userRoleDto = userRoleDto;
 	}
 
 }
