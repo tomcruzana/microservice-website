@@ -1,63 +1,30 @@
-package dev.company.employee.entity;
+package dev.company.employee.dto;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.PrePersist;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+public class EmployeeDto {
 
-import org.hibernate.annotations.CreationTimestamp;
-
-@Entity
-@Table(name = "employee")
-public class Employee {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "first_name")
 	private String firstName;
 
-	@Column(name = "last_name")
 	private String lastName;
 
-	@CreationTimestamp
-	@Temporal(TemporalType.DATE)
-	@Column(name = "date_hired")
 	private Date dateHired;
 
-	@Column(name = "phone_number")
 	private String phoneNumber;
 
-	@Column(name = "email_address")
 	private String emailAddress;
 
 	private String username;
 
 	private String password;
 
-	@Column(name = "is_enabled")
 	private boolean isEnabled;
 
-	@ManyToOne
-	@JoinColumn(name = "employee_role_name")
-	private EmployeeRole employeeRole;
+	private EmployeeRoleDto employeeRole;
 
-	public Employee() {
-	}
-
-	@PrePersist
-	public void prePersistDefaults() {
-		this.isEnabled = true;
+	public EmployeeDto() {
 	}
 
 	public int getId() {
@@ -132,11 +99,11 @@ public class Employee {
 		this.isEnabled = isEnabled;
 	}
 
-	public EmployeeRole getEmployeeRole() {
+	public EmployeeRoleDto getEmployeeRole() {
 		return employeeRole;
 	}
 
-	public void setEmployeeRole(EmployeeRole employeeRole) {
+	public void setEmployeeRole(EmployeeRoleDto employeeRole) {
 		this.employeeRole = employeeRole;
 	}
 

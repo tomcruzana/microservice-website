@@ -9,25 +9,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "employee_role")
 public class EmployeeRole {
 
 	@Id
-	private String employeeRole;
+	private String name;
 
-	@OneToMany(mappedBy = "university", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "employeeRole", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Employee> employees;
 
 	public EmployeeRole() {
 
 	}
 
-	public String getEmployeeRole() {
-		return employeeRole;
+	public String getName() {
+		return name;
 	}
 
-	public void setEmployeeRole(String employeeRole) {
-		this.employeeRole = employeeRole;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public List<Employee> getEmployees() {

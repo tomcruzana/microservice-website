@@ -2,6 +2,8 @@ package dev.company.employee.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EmployeeRole extends JpaRepository<EmployeeRole, String> {
+import dev.company.employee.entity.EmployeeRole;
+
+public interface EmployeeRoleRepository extends JpaRepository<EmployeeRole, String>{
 
 }
