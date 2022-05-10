@@ -33,7 +33,7 @@ create table employee(
     foreign key (user_role_name) references user_role(name)
 );
 
-insert into employee
+insert into employeesert
 (
 first_name,
 last_name,
