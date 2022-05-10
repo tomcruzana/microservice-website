@@ -1,18 +1,18 @@
 ### EMPLOYEE ROLE
-drop table employee_role;
+drop table user_role;
 
-create table employee_role(
+create table user_role(
 	name varchar(255) not null primary key unique
 );
 
-insert into employee_role (name)
+insert into user_role (name)
 values (upper("admin"));
-insert into employee_role (name)
+insert into user_role (name)
 values (upper("guest"));
-insert into employee_role (name)
+insert into user_role (name)
 values (upper("customer"));
 
-select * from employee_role;
+select * from user_role;
 
 
 ### COMPANY 
@@ -27,10 +27,10 @@ create table employee(
 	username varchar(255) not null unique,
     password varchar(255) not null,
     is_enabled boolean not null default true,
-    employee_role_name varchar(255) not null,
+    user_role_name varchar(255) not null,
     date_hired date not null default (current_date),
     
-    foreign key (employee_role_name) references employee_role(name)
+    foreign key (user_role_name) references user_role(name)
 );
 
 insert into employee
@@ -41,7 +41,7 @@ email_address,
 phone_number,
 username,
 password,
-employee_role_name
+user_role_name
 )
 values
 (
@@ -56,4 +56,4 @@ upper("admin")
 
 select * from employee;
 
-select * from employee inner join employee_role on employee.employee_role_name = employee_role.name;
+select * from employee inner join user_role on employee.user_role_name = user_role.name;
