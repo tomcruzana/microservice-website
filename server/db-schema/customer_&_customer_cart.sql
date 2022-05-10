@@ -57,6 +57,7 @@ create table customer(
     last_name varchar(255) not null
 );
 
+select * from customer;
 
 ### STORED PROCEDURE : CART CREATION FOR REGISTERED CX ###
 DELIMITER //

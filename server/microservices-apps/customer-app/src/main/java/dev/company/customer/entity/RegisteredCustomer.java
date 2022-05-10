@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -29,6 +30,9 @@ public class RegisteredCustomer extends Customer {
 	private String username;
 
 	private String password;
+
+	@OneToOne(mappedBy = "registeredCustomer")
+	private Cart cart;
 
 	@Column(name = "is_enabled")
 	private boolean isEnabled;
@@ -88,6 +92,14 @@ public class RegisteredCustomer extends Customer {
 
 	public void setEnabled(boolean isEnabled) {
 		this.isEnabled = isEnabled;
+	}
+
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 
 }
