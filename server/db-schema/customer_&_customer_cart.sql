@@ -76,3 +76,24 @@ END //
 DELIMITER ;
 
 CALL CreateCartForRegisteredCustomer('1', 1);
+
+
+### CART ITEM ###
+drop table cart_item;
+
+create table cart_item(
+	cart_id char(8),
+    product_item_id int,
+    quantity int not null,
+    
+    foreign key (cart_id) references cart(id)
+);
+
+insert into cart_item (cart_id, product_item_id, quantity)
+values('1', 1, 8);
+insert into cart_item (cart_id, product_item_id, quantity)
+values('1', 2, 2);
+
+select * from cart_item;
+
+
