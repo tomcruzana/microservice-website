@@ -28,6 +28,7 @@ create table employee(
     password varchar(255) not null,
     is_enabled boolean not null default true,
     employee_role_name varchar(255) not null,
+    date_hired date not null default (current_date),
     
     foreign key (employee_role_name) references employee_role(name)
 );
