@@ -104,4 +104,5 @@ values('CART1', 2, 2);
 
 select * from cart_item;
 
-
+# show all items in a specific cart
+SELECT * FROM CART_ITEM INNER JOIN CART ON CART_ITEM.CART_ID = CART.ID WHERE CART_ITEM.CART_ID = "CART5";
