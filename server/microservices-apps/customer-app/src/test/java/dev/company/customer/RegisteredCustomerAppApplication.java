@@ -2,7 +2,6 @@ package dev.company.customer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.Date;
 import java.util.List;
@@ -15,6 +14,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import dev.company.customer.entity.RegisteredCustomer;
+import dev.company.customer.repository.CartRepository;
 import dev.company.customer.repository.RegisteredCustomerRepository;
 
 @SpringBootTest
@@ -23,6 +23,9 @@ public class RegisteredCustomerAppApplication {
 	@Autowired
 	RegisteredCustomerRepository registeredCustomerRepo;
 
+	@Autowired
+	CartRepository cartRepository;
+
 	@Test
 	void contextLoads() {
 	}
@@ -30,26 +33,32 @@ public class RegisteredCustomerAppApplication {
 	@Test
 	@Transactional
 	@Rollback(false)
-	public void createCustomerTest() {
+	public void createCustomerWithCartTest() {
 		// fail();
 		RegisteredCustomer registeredCustomer = new RegisteredCustomer();
 		registeredCustomer.setFirstName("john");
 		registeredCustomer.setLastName("smith");
-		registeredCustomer.setCart(null);
 		registeredCustomer.setDateCreated(new Date());
 		registeredCustomer.setEmailAddress("john.smith@email.com");
 		registeredCustomer.setEnabled(false);
 		registeredCustomer.setPassword("$2a$12$PTMSi3U.cqwVs5FZsSYZi.16U14hJZIBekvv5Q//3Jt7ra2cp4EN.");
 		registeredCustomer.setPhoneNumber("8976541234");
 		registeredCustomer.setUsername("smith_john64");
-		
+
 		registeredCustomerRepo.save(registeredCustomer);
+
+		// find newly created cx & invoke Cart's stored procedure for cx cart creation
+		Optional<RegisteredCustomer> newlyRegisteredCustomerOptional = registeredCustomerRepo
+				.findByUsername(registeredCustomer.getUsername());
+		int id = newlyRegisteredCustomerOptional.get().getId();
+		cartRepository.createCartForRegisteredCustomer(String.valueOf(id), id);
+
 	}
 
 	@Test
 	public void readCustomerTest() {
 		// fail();
-		int id = 1;
+		int id = 2;
 		Optional<RegisteredCustomer> registeredCustomerOptional = registeredCustomerRepo.findById(id);
 		RegisteredCustomer registeredCustomer = registeredCustomerOptional.get();
 		assertNotNull(registeredCustomer, "Registered customer found!");
@@ -67,7 +76,7 @@ public class RegisteredCustomerAppApplication {
 	@Rollback(true)
 	public void updateCustomerTest() {
 		// fail();
-		int id = 1;
+		int id = 2;
 		Optional<RegisteredCustomer> registeredCustomerOptional = registeredCustomerRepo.findById(id);
 		RegisteredCustomer registeredCustomer = registeredCustomerOptional.get();
 
@@ -81,7 +90,7 @@ public class RegisteredCustomerAppApplication {
 	@Rollback(true)
 	public void deleteCustomerTest() {
 		// fail();
-		int id = 1;
+		int id = 2;
 		registeredCustomerRepo.deleteById(id);
 	}
 }

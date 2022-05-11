@@ -23,6 +23,8 @@ create table registered_customer(
     is_enabled boolean not null default true
 );
 
+### WARN! Make sure there's an existing id in the id_gen table
+### since we're using generation.TABLE strategy in the backend
 insert into registered_customer
 (
 first_name,
@@ -50,7 +52,7 @@ drop table cart;
 
 create table cart(
 	id char(8) primary key,
-    registered_customer_id int not null,
+    registered_customer_id int not null unique,
     
     foreign key (registered_customer_id) references registered_customer(id)
 );
@@ -80,7 +82,7 @@ BEGIN
 END //
 DELIMITER ;
 
-CALL CreateCartForRegisteredCustomer('1', 1);
+CALL CreateCartForRegisteredCustomer("2", 2);
 
 
 ### CART ITEM ###
