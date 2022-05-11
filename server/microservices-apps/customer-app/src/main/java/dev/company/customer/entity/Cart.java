@@ -1,10 +1,14 @@
 package dev.company.customer.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -18,6 +22,10 @@ public class Cart {
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "registered_customer_id", referencedColumnName = "id")
 	RegisteredCustomer registeredCustomer;
+
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "cart_id")
+	List<CartItem> cartItems;
 
 	public Cart() {
 	}
@@ -36,6 +44,14 @@ public class Cart {
 
 	public void setRegisteredCustomer(RegisteredCustomer registeredCustomer) {
 		this.registeredCustomer = registeredCustomer;
+	}
+
+	public List<CartItem> getCartItems() {
+		return cartItems;
+	}
+
+	public void setCartItems(List<CartItem> cartItems) {
+		this.cartItems = cartItems;
 	}
 
 }

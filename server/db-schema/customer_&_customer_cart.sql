@@ -1,8 +1,18 @@
+### ID GENERATOR ###
+drop table id_gen;
+
+create table id_gen(
+	gen_name varchar(60) primary key,
+	gen_val int
+)
+
+select * from id_gen;
+
 ### REGISTERED CUSTOMER ###
 drop table registered_customer;
 
 create table registered_customer(
-	id int primary key auto_increment,
+	id int primary key,
     first_name varchar(255) not null,
     last_name varchar(255) not null,
     phone_number char(32) unique,
@@ -52,7 +62,7 @@ select * from cart;
 drop table customer;
 
 create table customer(
-	id int primary key auto_increment,
+	id int primary key,
     first_name varchar(255) not null,
     last_name varchar(255) not null
 );
@@ -77,6 +87,7 @@ CALL CreateCartForRegisteredCustomer('1', 1);
 drop table cart_item;
 
 create table cart_item(
+	id int auto_increment primary key,
 	cart_id char(8),
     product_item_id int,
     quantity int not null,

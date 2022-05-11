@@ -1,26 +1,13 @@
-package dev.company.customer.entity;
+package dev.company.customer.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "cart_item")
-public class CartItem {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CartItemDto {
 	private int id;
 
-	@Column(name = "product_item_id")
 	private int productItemId;
 
 	private int quantity;
 
-	public CartItem() {
+	public CartItemDto() {
 	}
 
 	public int getId() {
@@ -46,5 +33,4 @@ public class CartItem {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
 }
