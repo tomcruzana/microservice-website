@@ -18,8 +18,7 @@ import javax.persistence.Table;
 @Table(name = "cart")
 @NamedStoredProcedureQuery(name = "Cart.createCartForRegisteredCustomer", procedureName = "CreateCartForRegisteredCustomer", parameters = {
 		@StoredProcedureParameter(mode = ParameterMode.IN, name = "cartId", type = String.class),
-		@StoredProcedureParameter(mode = ParameterMode.IN, name = "registeredCustomerId", type = Integer.class)
-})
+		@StoredProcedureParameter(mode = ParameterMode.IN, name = "registeredCustomerId", type = Integer.class) })
 public class Cart {
 
 	@Id
@@ -29,8 +28,7 @@ public class Cart {
 	@JoinColumn(name = "registered_customer_id", referencedColumnName = "id")
 	RegisteredCustomer registeredCustomer;
 
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "cart_id")
+	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
 	List<CartItem> cartItems;
 
 	public Cart() {
