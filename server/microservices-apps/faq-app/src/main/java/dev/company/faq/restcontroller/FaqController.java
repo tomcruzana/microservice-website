@@ -25,9 +25,9 @@ public class FaqController {
 		List<FaqDto> faqDtoList = faqService.getAllFaqs();
 		return new ResponseEntity<>(faqDtoList, HttpStatus.OK);
 	}
-	
-	@GetMapping("/faqs")
-	public ResponseEntity<List<FaqDto>> getFaqById(@RequestParam int id) throws Exception {
+
+	@GetMapping("/faqs/q")
+	public ResponseEntity<FaqDto> getFaqById(@RequestParam int id) throws Exception {
 		FaqDto faqDto = faqService.getFaqById(id);
 		return new ResponseEntity<>(faqDto, HttpStatus.OK);
 	}
