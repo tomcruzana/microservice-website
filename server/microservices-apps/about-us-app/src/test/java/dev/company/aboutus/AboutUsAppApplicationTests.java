@@ -1,5 +1,6 @@
 package dev.company.aboutus;
 
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.File;
