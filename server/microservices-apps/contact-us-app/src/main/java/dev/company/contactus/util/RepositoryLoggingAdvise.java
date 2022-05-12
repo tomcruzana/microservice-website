@@ -17,7 +17,6 @@ import dev.company.contactus.repository.ContactUsRepository;
 @Component
 public class RepositoryLoggingAdvise<T> {
     
-    // DELETE THIS. MODIFY THE CLASS NAME & CHECK PACKAGE NAMES!!!
 	private final Logger repositoryLogger = LoggerFactory.getLogger(ContactUsRepository.class);
 
 	// THESE ARE POINTCUT EXPRESSIONS FOR REUSE
