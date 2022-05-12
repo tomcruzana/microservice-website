@@ -12,7 +12,7 @@ import dev.company.privacypolicy.exception.PrivacyPolicyException;
 import dev.company.privacypolicy.repository.PrivacyPolicyRepository;
 
 @Service
-public class PrivacyPolicyImpl implements PrivacyPolicyService {
+public class PrivacyPolicyServiceImpl implements PrivacyPolicyService {
 
 	@Autowired
 	PrivacyPolicyRepository privacyPolicyRepo;
