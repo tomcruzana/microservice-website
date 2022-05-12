@@ -217,12 +217,31 @@
         </table>
 
         <div class="coupon-box d-flex align-items-end flex-column border-top">
-          <label for="couponCode">Promotions</label>
-          <input id="couponCode" name="couponcode" type="text" class="form-control w-25" placeholder="Enter coupon code">
+          <label for="couponCode" class="mt-2">Promotions</label>
+          <div class="form-inline">
+            <div class="form-group">
+              <input
+                id="couponCode"
+                name="couponcode"
+                type="text"
+                class="form-control rounded-0"
+                placeholder="Enter coupon code"
+              />
+              <button
+                type="button"
+                id="applyCouponBtn"
+                class="btn btn-primary rounded-0"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- total items price start & other actions-->
-        <div class="customer-cart-total-price d-flex justify-content-between mt-4">
+        <div
+          class="customer-cart-total-price d-flex justify-content-between mt-4"
+        >
           <div class="customer-cart-btn-group">
             <button type="button" class="btn btn-primary btn-sm">
               Update quantities
@@ -260,8 +279,8 @@
           <i class="fa-solid fa-envelope"></i>
           Author:
           <a class="align-middle my-0" href="mailto: abc@example.com"
-            >Thomas </a
-          >
+            >Thomas
+          </a>
         </p>
       </div>
 
