@@ -2,6 +2,7 @@ package dev.company.faq.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -40,6 +41,19 @@ public class FaqServiceImpl implements FaqService {
 			faqDtoList.add(faqDto);
 		});
 		return faqDtoList;
+	}
+
+	@Override
+	public FaqDto getFaqById(int id) throws FaqException {
+		Optional<Faq> faqOptional = faqRepository.findById(id);
+
+		Faq faq = faqOptional.orElseThrow(() -> new FaqException(environment.getProperty("Domain.RESOURCE_NOT_FOUND")));
+		FaqDto faqDto = new FaqDto();
+		faqDto.setId(faq.getId());
+		faqDto.setDateCreated(faq.getDateCreated());
+		faqDto.setAnswer(faq.getAnswer());
+		faqDto.setQuestion(faq.getQuestion());
+		return faqDto;
 	}
 
 }

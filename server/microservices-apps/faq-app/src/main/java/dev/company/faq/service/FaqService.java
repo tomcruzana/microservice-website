@@ -7,4 +7,6 @@ import dev.company.faq.exception.FaqException;
 
 public interface FaqService {
 	public List<FaqDto> getAllFaqs() throws FaqException;
+
+	public FaqDto getFaqById(int id) throws FaqException;
 }
