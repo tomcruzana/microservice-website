@@ -19,7 +19,7 @@ public class ShippingAndReturnsController {
 
 	@GetMapping("/shipping_and_returns")
 	public ResponseEntity<ShippingAndReturnsDto> getShippingAndReturn() throws Exception {
-		final int shippingAndReturnsId = 2;
+		final int shippingAndReturnsId = 1;
 
 		ShippingAndReturnsDto shippingAndReturnsDto = shippingAndReturnsService
 				.getShippingAndReturns(shippingAndReturnsId);

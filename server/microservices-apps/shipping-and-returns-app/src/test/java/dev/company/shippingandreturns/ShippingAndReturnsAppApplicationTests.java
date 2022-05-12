@@ -1,6 +1,7 @@
 package dev.company.shippingandreturns;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,11 +16,16 @@ import org.springframework.core.env.Environment;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import dev.company.shippingandreturns.dto.ShippingAndReturnsDto;
 import dev.company.shippingandreturns.entity.ShippingAndReturns;
 import dev.company.shippingandreturns.repository.ShippingAndReturnsRepository;
+import dev.company.shippingandreturns.service.ShippingAndReturnsService;
 
 @SpringBootTest
 class ShippingAndReturnsAppApplicationTests {
+
+	@Autowired
+	private ShippingAndReturnsService shippingAndReturnsService;
 
 	@Autowired
 	ShippingAndReturnsRepository shippingAndReturnsRepo;
@@ -56,7 +62,8 @@ class ShippingAndReturnsAppApplicationTests {
 
 		String fileName = "c".toUpperCase();
 		String fileType = ".png".toUpperCase();
-		File file = new File(environment.getProperty("shipping_and_returns.img.upload.path") + fileName.concat(fileType));
+		File file = new File(
+				environment.getProperty("shipping_and_returns.img.upload.path") + fileName.concat(fileType));
 		byte fileContent[] = new byte[(int) file.length()];
 		FileInputStream inputStream = new FileInputStream(file);
 		inputStream.read(fileContent);
@@ -76,16 +83,25 @@ class ShippingAndReturnsAppApplicationTests {
 		Optional<ShippingAndReturns> shippingAndReturnsOptional = shippingAndReturnsRepo.findById(2);
 		ShippingAndReturns shippingAndReturns = shippingAndReturnsOptional.get();
 		System.out.println(shippingAndReturns.getTitle());
-		
+
 		// save the read image to this path dir and override if file exists
 		String fileName = "shippingAndReturns".toUpperCase();
 		String fileType = ".png".toUpperCase();
-		File file = new File(environment.getProperty("shipping_and_returns.img.download.path") + fileName.concat(fileType));
+		File file = new File(
+				environment.getProperty("shipping_and_returns.img.download.path") + fileName.concat(fileType));
 		FileOutputStream fos = new FileOutputStream(file);
 
 		// read the image blob from the db
 		fos.write(shippingAndReturns.getPhoto());
 		fos.close();
 
+	}
+
+	@Test
+	public void getResourceServiceLayerTest() throws Exception {
+		// fail();
+		int id = 1;
+		ShippingAndReturnsDto shippingAndReturnsDto = shippingAndReturnsService.getShippingAndReturns(id);
+		assertNotNull(shippingAndReturnsDto, "Resource is not null!");
 	}
 }
