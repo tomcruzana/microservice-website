@@ -1,7 +1,6 @@
 package dev.company.aboutus;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,14 +15,20 @@ import org.springframework.core.env.Environment;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import dev.company.aboutus.dto.AboutUsDto;
 import dev.company.aboutus.entity.AboutUs;
+import dev.company.aboutus.exception.AboutUsException;
 import dev.company.aboutus.repository.AboutUsRepository;
+import dev.company.aboutus.service.AboutUsService;
 
 @SpringBootTest
 class AboutUsAppApplicationTests {
+	
+	@Autowired
+	AboutUsService aboutUsService;
 
 	@Autowired
-	AboutUsRepository AboutUsRepo;
+	AboutUsRepository aboutUsRepo;
 	
 	@Autowired
 	Environment environment;
@@ -40,7 +45,7 @@ class AboutUsAppApplicationTests {
 	public void getAboutUsByIdTest() {
 		// fail();
 		int id = 1;
-		Optional<AboutUs> aboutUsOptional = AboutUsRepo.findById(id);
+		Optional<AboutUs> aboutUsOptional = aboutUsRepo.findById(id);
 		AboutUs aboutUs = aboutUsOptional.get();
 
 		assertNotNull(aboutUs, "About Us loaded!");
@@ -64,14 +69,14 @@ class AboutUsAppApplicationTests {
 		aboutUs.setPhoto(fileContent);
 		aboutUs.setOrganizationDescription("Lorem");
 		aboutUs.setOrganizationMission("Ipsum");
-		AboutUsRepo.save(aboutUs);
+		aboutUsRepo.save(aboutUs);
 		inputStream.close();
 	}
 
 	@Test
 	public void imageReadTest() throws IOException {
 		// fail();
-		Optional<AboutUs> aboutUsOptional = AboutUsRepo.findById(1);
+		Optional<AboutUs> aboutUsOptional = aboutUsRepo.findById(1);
 		AboutUs aboutUs = aboutUsOptional.get();
 		
 		// save the read image to this path dir and override if file exists
@@ -84,6 +89,13 @@ class AboutUsAppApplicationTests {
 		fos.write(aboutUs.getPhoto());
 		fos.close();
 
+	}
+	
+	@Test
+	public void getAboutUsServiceLayerTest() throws AboutUsException {
+		int id = 1;
+		AboutUsDto aboutUsDto = aboutUsService.getAboutUs(id);
+		assertNotNull(aboutUsDto, "About Us is not null!");
 	}
 
 }
