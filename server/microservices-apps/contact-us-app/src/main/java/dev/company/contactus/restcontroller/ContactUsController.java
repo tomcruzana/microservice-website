@@ -27,7 +27,7 @@ public class ContactUsController {
 	private ContactUsService contactUsService;
 
 	@GetMapping("/contact_us/q")
-	public ResponseEntity<ContactUsDto> getTermsOfUse(@RequestParam String id) throws Exception {
+	public ResponseEntity<ContactUsDto> getContactUsMessage(@RequestParam String id) throws Exception {
 		ContactUsDto contactUsDto = contactUsService.getContactUsMessageById(id);
 		return new ResponseEntity<>(contactUsDto, HttpStatus.OK);
 	}

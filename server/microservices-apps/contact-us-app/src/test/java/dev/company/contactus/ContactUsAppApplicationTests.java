@@ -1,6 +1,7 @@
 package dev.company.contactus;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Optional;
@@ -13,14 +14,19 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import dev.company.contactus.dto.ContactUsDto;
 import dev.company.contactus.entity.ContactUs;
 import dev.company.contactus.repository.ContactUsRepository;
+import dev.company.contactus.service.ContactUsService;
 
 @SpringBootTest
 class ContactUsAppApplicationTests {
 
 	@Autowired
 	private ContactUsRepository contactUsRepo;
+	
+	@Autowired
+	private ContactUsService contactUsService;
 
 	@Test
 	void contextLoads() {
@@ -76,5 +82,14 @@ class ContactUsAppApplicationTests {
 		contactUs = contactUsOptional.get();
 
 		assertEquals("EMAIL SUBJECT", contactUs.getEmailSubject());
+	}
+	
+	
+	@Test
+	public void getResourceServiceLayerTest() throws Exception {
+		// fail();
+		String id = "1";
+		ContactUsDto contactUsDto = contactUsService.getContactUsMessageById(id);
+		assertNotNull(contactUsDto, "Resource is not null!");
 	}
 }
