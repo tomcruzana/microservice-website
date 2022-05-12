@@ -83,7 +83,7 @@ class ProductItemAppApplicationTests {
 	@Rollback(true)
 	public void deleteProductItemTest() {
 		// fail();
-		int id = 7;
+		int id = 2;
 		productItemRepository.deleteById(id);
 	}
 
