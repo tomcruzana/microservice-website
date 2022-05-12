@@ -32,6 +32,7 @@
     transition: all 0.2s;
   }
   
+  /* labels aren't applied at the moment */
   .form-label-group {
     position: relative;
     margin-bottom: 1rem;
