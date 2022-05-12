@@ -32,7 +32,7 @@ public class RegisteredCustomerAppApplication {
 
 	@Test
 	@Transactional
-	@Rollback(false)
+	@Rollback(true)
 	public void createCustomerWithCartTest() {
 		// fail();
 		RegisteredCustomer registeredCustomer = new RegisteredCustomer();
@@ -58,7 +58,7 @@ public class RegisteredCustomerAppApplication {
 	@Test
 	public void readCustomerTest() {
 		// fail();
-		int id = 2;
+		int id = 5;
 		Optional<RegisteredCustomer> registeredCustomerOptional = registeredCustomerRepo.findById(id);
 		RegisteredCustomer registeredCustomer = registeredCustomerOptional.get();
 		assertNotNull(registeredCustomer, "Registered customer found!");
@@ -76,7 +76,7 @@ public class RegisteredCustomerAppApplication {
 	@Rollback(true)
 	public void updateCustomerTest() {
 		// fail();
-		int id = 2;
+		int id = 5;
 		Optional<RegisteredCustomer> registeredCustomerOptional = registeredCustomerRepo.findById(id);
 		RegisteredCustomer registeredCustomer = registeredCustomerOptional.get();
 
@@ -90,7 +90,7 @@ public class RegisteredCustomerAppApplication {
 	@Rollback(true)
 	public void deleteCustomerTest() {
 		// fail();
-		int id = 2;
+		int id = 5;
 		registeredCustomerRepo.deleteById(id);
 	}
 }
