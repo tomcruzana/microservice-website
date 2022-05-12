@@ -94,6 +94,7 @@ class AboutUsAppApplicationTests {
 	
 	@Test
 	public void getAboutUsServiceLayerTest() throws AboutUsException {
+		// fail();
 		int id = 1;
 		AboutUsDto aboutUsDto = aboutUsService.getAboutUs(id);
 		assertNotNull(aboutUsDto, "About Us is not null!");

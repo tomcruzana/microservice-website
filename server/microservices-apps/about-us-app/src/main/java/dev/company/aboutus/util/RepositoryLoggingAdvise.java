@@ -11,7 +11,6 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import dev.company.aboutus.repository.AboutUsRepository;
-import dev.company.aboutus.service.AboutUsServiceImpl;
 
 @Order(2)
 @Aspect
