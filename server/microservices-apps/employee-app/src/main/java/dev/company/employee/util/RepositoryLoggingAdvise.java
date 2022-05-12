@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import dev.company.employee.repository.EmployeeRepository;
 import dev.company.employee.repository.UserRoleRepository;
 
-@Order(2)
+@Order(1)
 @Aspect
 @Component
 public class RepositoryLoggingAdvise<T> {
