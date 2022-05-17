@@ -217,24 +217,26 @@ class Index extends HTMLElement {
 // process page
 customElements.define("main-content", Index);
 
-async function request(url, settings) {
-  const response = await fetch(url, settings);
+async function request(url, httpMethod) {
+  const response = await fetch(url, {
+    method: httpMethod,
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
   const json = await response.json();
 
   return json;
 }
 
 // map & populate fetched data
-request(`https://jsonplaceholder.typicode.com/todos/1`, {
-  method: "GET",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-}).then((resource) => {
-  // map data
-  const companyName = document.querySelector(".company-name");
+request(`https://jsonplaceholder.typicode.com/todos/1`, "GET").then(
+  (resource) => {
+    // map data
+    const companyName = document.querySelector(".company-name");
 
-  // populate data
-  companyName.textContent = resource.title;
-});
+    // populate data
+    companyName.textContent = resource.title;
+  }
+);
