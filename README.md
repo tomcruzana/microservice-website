@@ -11,5 +11,5 @@ start server
 ```
 java -jar zipkin.jar
 ```
-default dashboard link
+default dashboard link: 
 [localhost:9411](http://localhost:9411/zipkin/)
