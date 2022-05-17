@@ -1,6 +1,11 @@
 # microservices-website
 a spring boot website that runs on microservice architecture
 
+Eureka Server
+------
+default dashboard link: 
+[http://localhost:8761/](http://localhost:8761/)
+
 Zipkin Server
 ------
 install
