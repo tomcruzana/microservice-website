@@ -11,7 +11,7 @@ import dev.company.dto.CompanyDto;
 import dev.company.service.CompanyService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/companyapi")
 public class CompanyController {
 
 	@Autowired
