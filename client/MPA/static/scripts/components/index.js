@@ -231,12 +231,12 @@ async function request(url, httpMethod) {
 }
 
 // map & populate fetched data
-request(`https://jsonplaceholder.typicode.com/todos/1`, "GET").then(
-  (resource) => {
+request(`https://jsonplaceholder.typicode.com/todos/1`, "GET")
+  .then((resource) => {
     // map data
     const companyName = document.querySelector(".company-name");
 
     // populate data
     companyName.textContent = resource.title;
-  }
-);
+  })
+  .catch((err) => console.log(err));
