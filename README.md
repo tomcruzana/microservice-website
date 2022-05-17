@@ -18,3 +18,7 @@ java -jar zipkin.jar
 ```
 default dashboard link: 
 [localhost:9411/zipkin/](http://localhost:9411/zipkin/)
+
+Spring Actuator
+------
+lorem upsum dolor
