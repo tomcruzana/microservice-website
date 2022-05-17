@@ -21,21 +21,21 @@ class Index extends HTMLElement {
             <div class="carousel-item active">
             <img
                 class="d-block w-100"
-                src="https://dummyimage.com/800x400/e2e5e7/fff.png"
+                src="https://dummyimage.com/800x400/6495ED/fff.png"
                 alt="First slide"
             />
             </div>
             <div class="carousel-item">
             <img
                 class="d-block w-100"
-                src="https://dummyimage.com/800x400/e2e5e7/fff.png"
+                src="https://dummyimage.com/800x400/6495ED/fff.png"
                 alt="Second slide"
             />
             </div>
             <div class="carousel-item">
             <img
                 class="d-block w-100"
-                src="https://dummyimage.com/800x400/e2e5e7/fff.png"
+                src="https://dummyimage.com/800x400/6495ED/fff.png"
                 alt="Third slide"
             />
             </div>
@@ -65,10 +65,12 @@ class Index extends HTMLElement {
         class="slogan-jumbotron jumbotron p-1 text-center bg-transparent mt-2 mb-0"
         >
         <div class="container">
-            <h1 class="display-5 skeleton hide-text">Welcome to <span class="company-name">XYZ company</span></h1>
-            <p class="lead skeleton hide-text">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            <h1 class="display-5">Welcome to <span class="company-name ">XYZ company</span></h1>
+            <p class="lead">
+            "<span class="company-slogan ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </span>"
             </p>
         </div>
         </div>
@@ -96,11 +98,11 @@ class Index extends HTMLElement {
             <div class="card">
             <img
                 class="card-img-top"
-                src="https://dummyimage.com/512x512/e2e5e7/fff.png"
+                src="https://dummyimage.com/512x512/6495ED/fff.png"
                 alt="Card image cap"
             />
             <div class="card-body text-center">
-                <p class="card-text text-truncate skeleton hide-text">
+                <p class="card-text text-truncate ">
                 Some text inside the xyz card. Ut enim ad minim veniam, quis
                 nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                 commodo consequat...
@@ -111,11 +113,11 @@ class Index extends HTMLElement {
             <div class="card">
             <img
                 class="card-img-top"
-                src="https://dummyimage.com/512x512/e2e5e7/fff.png"
+                src="https://dummyimage.com/512x512/6495ED/fff.png"
                 alt="Card image cap"
             />
             <div class="card-body text-center">
-                <p class="card-text text-truncate skeleton hide-text">
+                <p class="card-text text-truncate ">
                 Some text inside the xyz card. Ut enim ad minim veniam, quis
                 nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                 commodo consequat...
@@ -126,11 +128,11 @@ class Index extends HTMLElement {
             <div class="card">
             <img
                 class="card-img-top"
-                src="https://dummyimage.com/512x512/e2e5e7/fff.png"
+                src="https://dummyimage.com/512x512/6495ED/fff.png"
                 alt="Card image cap"
             />
             <div class="card-body text-center">
-                <p class="card-text text-truncate skeleton hide-text">
+                <p class="card-text text-truncate ">
                 Some text inside the xyz card. Ut enim ad minim veniam, quis
                 nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                 commodo consequat...
@@ -156,12 +158,12 @@ class Index extends HTMLElement {
             <li class="media">
             <img
                 class="mr-3"
-                src="https://dummyimage.com/128x128/e2e5e7/fff.png"
+                src="https://dummyimage.com/128x128/6495ED/fff.png"
                 alt="Generic placeholder image"
             />
             <div class="media-body">
-                <h5 class="mt-0 mb-1 skeleton hide-text">List-based media object</h5>
-                <p class="skeleton hide-text">
+                <h5 class="mt-0 mb-1 ">List-based media object</h5>
+                <p class="">
                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
                 scelerisque ante sollicitudin. Cras purus odio, vestibulum in
                 vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
@@ -172,12 +174,12 @@ class Index extends HTMLElement {
             <li class="media my-4">
             <img
                 class="mr-3"
-                src="https://dummyimage.com/128x128/e2e5e7/fff.png"
+                src="https://dummyimage.com/128x128/6495ED/fff.png"
                 alt="Generic placeholder image"
             />
             <div class="media-body">
-                <h5 class="mt-0 mb-1 skeleton hide-text">List-based media object</h5>
-                <p class="skeleton hide-text">
+                <h5 class="mt-0 mb-1 ">List-based media object</h5>
+                <p class="">
                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
                 scelerisque ante sollicitudin. Cras purus odio, vestibulum in
                 vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
@@ -188,12 +190,12 @@ class Index extends HTMLElement {
             <li class="media">
             <img
                 class="mr-3"
-                src="https://dummyimage.com/128x128/e2e5e7/fff.png"
+                src="https://dummyimage.com/128x128/6495ED/fff.png"
                 alt="Generic placeholder image"
             />
             <div class="media-body">
-                <h5 class="mt-0 mb-1 skeleton hide-text">List-based media object</h5>
-                <p class="skeleton hide-text">
+                <h5 class="mt-0 mb-1 ">List-based media object</h5>
+                <p class="">
                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
                 scelerisque ante sollicitudin. Cras purus odio, vestibulum in
                 vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
@@ -217,13 +219,9 @@ class Index extends HTMLElement {
 // process page
 customElements.define("main-content", Index);
 
-async function request(url, httpMethod) {
+async function request(url, httpmethod) {
   const response = await fetch(url, {
-    method: httpMethod,
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
+    method: httpmethod,
   });
   const json = await response.json();
 
@@ -231,12 +229,14 @@ async function request(url, httpMethod) {
 }
 
 // map & populate fetched data
-request(`https://jsonplaceholder.typicode.com/todos/1`, "GET")
+request(`http://localhost:8765/companyapi/company_info`, "GET")
   .then((resource) => {
     // map data
     const companyName = document.querySelector(".company-name");
+    const companySlogan = document.querySelector(".company-slogan");
 
     // populate data
-    companyName.textContent = resource.title;
+    companyName.textContent = resource.name;
+    companySlogan.textContent = resource.slogan;
   })
   .catch((err) => console.log(err));
