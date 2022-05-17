@@ -17,7 +17,7 @@ import dev.company.contactus.dto.ContactUsDto;
 import dev.company.contactus.service.ContactUsService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/contactusapi")
 public class ContactUsController {
 
 	@Autowired

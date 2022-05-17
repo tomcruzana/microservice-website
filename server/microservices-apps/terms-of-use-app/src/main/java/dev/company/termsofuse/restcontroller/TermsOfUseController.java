@@ -11,7 +11,7 @@ import dev.company.termsofuse.dto.TermsOfUseDto;
 import dev.company.termsofuse.service.TermsOfUseService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/termsofuseapi")
 public class TermsOfUseController {
 
 	@Autowired

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.company.guestemail.service.GuestEmailService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/guestemailapi")
 public class GuestEmailController {
 
 	@Autowired

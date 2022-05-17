@@ -13,7 +13,7 @@ import dev.company.coupon.dto.CouponDto;
 import dev.company.coupon.service.CouponService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/couponapi")
 public class CouponController implements ErrorController {
 
 	@Autowired

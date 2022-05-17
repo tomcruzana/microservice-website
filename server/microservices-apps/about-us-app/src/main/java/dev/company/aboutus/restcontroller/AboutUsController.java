@@ -11,7 +11,7 @@ import dev.company.aboutus.dto.AboutUsDto;
 import dev.company.aboutus.service.AboutUsService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/aboutusapi")
 public class AboutUsController {
 
 	@Autowired

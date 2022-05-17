@@ -11,7 +11,7 @@ import dev.company.shippingandreturns.dto.ShippingAndReturnsDto;
 import dev.company.shippingandreturns.service.ShippingAndReturnsService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/shippingandreturnsapi")
 public class ShippingAndReturnsController {
 
 	@Autowired

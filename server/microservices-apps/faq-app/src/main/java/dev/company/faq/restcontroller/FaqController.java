@@ -14,7 +14,7 @@ import dev.company.faq.dto.FaqDto;
 import dev.company.faq.service.FaqService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/faqapi")
 public class FaqController {
 
 	@Autowired

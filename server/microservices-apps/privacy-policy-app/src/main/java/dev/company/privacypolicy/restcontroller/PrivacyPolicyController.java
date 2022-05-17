@@ -11,7 +11,7 @@ import dev.company.privacypolicy.dto.PrivacyPolicyDto;
 import dev.company.privacypolicy.service.PrivacyPolicyService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/privacypolicyapi")
 public class PrivacyPolicyController {
 	@Autowired
 	PrivacyPolicyService privacyPolicyService;
