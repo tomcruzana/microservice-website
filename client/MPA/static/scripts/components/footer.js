@@ -32,7 +32,7 @@ class Footer extends HTMLElement {
                         placeholder="enter email address"
                         />
                     </div>
-                    <button type="submit" class="btn btn-warning mb-2">
+                    <button type="submit" class="btn btn-warning mb-2 subscribe-btn">
                         Subscribe!
                     </button>
                     </form>
