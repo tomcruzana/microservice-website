@@ -238,5 +238,6 @@ request(`http://localhost:8765/companyapi/company_info`, "GET")
     // populate data
     companyName.textContent = resource.name;
     companySlogan.textContent = resource.slogan;
+
   })
   .catch((err) => console.log(err));
