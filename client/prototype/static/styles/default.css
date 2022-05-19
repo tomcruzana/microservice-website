@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+.nav-link {
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #f0ad4e;
+}
+
+.tel-number {
+  font-weight: bolder;
+}
+
+.tel-number:hover {
+  text-decoration: none;
+}
+
+.slogan-jumbotron {
+  font-family: "Patrick Hand", cursive;
+}
+
+.fa-facebook-square{
+  color: #3b5998 !important;
+}
+
+.fa-youtube-square{
+  color: #FF0000 !important;
+}
+
+.fa-twitter-square{
+  color: #00acee !important;
+}
+
+.fa-instagram-square{
+  color: #8a3ab9 !important;
+}
+
+.products-sidebar{
+  background-color: #f7f7f7;
+}
+
+.product-horizontal{
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.product-rating{
+  color: #f0ad4e;
+}
+
+.product-link:link, .product-link:visited, .product-link:hover, .product-link:active{
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+.product-link:hover{
+  background-color: #f7f7f7;
+}
+
+.btn-product-add-to-cart{
+  background-color: #ffd814 !important;
+}
+
+.btn-buy-now{
+  background-color: #ffa41c !important;
+}
